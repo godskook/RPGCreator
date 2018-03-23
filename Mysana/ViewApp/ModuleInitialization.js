@@ -1,0 +1,1 @@
+﻿var DnDapp = angular.module('DnDmodule', [])
