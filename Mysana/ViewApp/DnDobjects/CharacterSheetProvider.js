@@ -1,5 +1,5 @@
 ﻿var characterSheet = function () {
-    this.$get = function ($http) {
+    this.$get = function ($http, raceProvider) {
         var characters = [];
         function character() {
             var character = {
@@ -13,7 +13,7 @@
                     wisdom: 8,
                     charisma: 8
                 },
-                race: '',
+                race: raceProvider.races()[0],
                 job: { wizard: 0 }
             };
             characters.push(character);

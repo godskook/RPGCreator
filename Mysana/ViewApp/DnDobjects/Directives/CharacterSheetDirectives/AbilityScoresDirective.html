@@ -2,17 +2,27 @@
     <div class="row"><div class="col-xs-12">Point Buy: {{spentPointbuy}}/{{pointBuy}}</div></div>
     <div class="attribute-box">
         <div class="row">
-            <div class="col-xs-5">Atrribute</div>
-            <div class="col-xs-5">Base Value</div>
+            <div class="col-xs-1">Atrribute</div>
+            <div class="col-xs-1">Base Value</div>
             <div class="col-xs-1"></div>
             <div class="col-xs-1"></div>
+            <div class="col-xs-1">Race Bonus</div>
+
+            <div class="col-xs-1">Total</div>
         </div>
         <div ng-repeat="(key, value) in attributes">
-            <div class="row">
-                <div class="col-xs-5">{{key}}:</div>
-                <input class="col-xs-5" ng-model="value">
-                <button class="col-xs-1" ng-click="addToAttribute(key)" ng-disabled="value >= max"><span class="glyphicon-plus"></span></button>
-                <button class="col-xs-1" ng-click="subtractFromAttribute(key)" ng-disabled="value <= min"><span class="glyphicon-minus"></span></button>
+            <div class="row" ng-init="initializeKeyVariables(key)">
+                <div class="col-xs-1">{{key}}:</div>
+                <input class="col-xs-1" ng-model="value" disabled />
+                <button class="col-xs-1" ng-click="addToAttribute(key)" ng-disabled="(value >= max || costToBuy[key] > (pointBuy - spentPointbuy))">
+                    <span class="glyphicon-plus"></span>({{costToBuy[key]}} pb)
+                </button>
+                <button class="col-xs-1" ng-click="subtractFromAttribute(key)" ng-disabled="value <= min">
+                    <span class="glyphicon-minus"></span>({{costToRefund[key]}} pb)
+                </button>
+                <input class="col-xs-1" ng-model="race.attributes[key]" disabled />
+
+                <input class="col-xs-1" ng-value="value + race.attributes[key]" disabled />
             </div>
         </div>
     </div>

@@ -1,3 +1,5 @@
 ﻿<div class="character-sheet">
-    <ability-scores-directive attributes="sheet.attributes" point-buy="sheet.pointBuy" class="row"></ability-scores-directive>
+    <ability-scores-directive race="sheet.race" attributes="sheet.attributes" point-buy="sheet.pointBuy" class="row"></ability-scores-directive>
+    <race-selector-directive race="sheet.race"></race-selector-directive>
+    {{sheet.race}}
 </div>

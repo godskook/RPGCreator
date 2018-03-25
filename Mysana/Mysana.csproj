@@ -193,8 +193,11 @@
     <Content Include="ViewApp\DnDobjects\Directives\CharacterSheetDirective.html" />
     <Content Include="ViewApp\DnDobjects\Directives\CharacterSheetDirectives\AbilityScoresDirective.js" />
     <Content Include="ViewApp\DnDobjects\Directives\CharacterSheetDirectives\AbilityScoresDirective.html" />
+    <Content Include="ViewApp\DnDobjects\Directives\CharacterSheetDirectives\RaceSelectorDirective.html" />
+    <Content Include="ViewApp\DnDobjects\Directives\CharacterSheetDirectives\RaceSelectorDirective.js" />
     <Content Include="ViewApp\DnDobjects\Feat.js" />
     <Content Include="ViewApp\DnDobjects\Feat.html" />
+    <Content Include="ViewApp\DnDobjects\RaceProvider.js" />
     <Content Include="ViewApp\DnDobjects\ResourceProvider.js" />
     <Content Include="ViewApp\DnDobjects\DnDAppController.js" />
     <Content Include="ViewApp\ModuleInitialization.js" />
