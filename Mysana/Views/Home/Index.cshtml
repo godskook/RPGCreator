@@ -18,7 +18,12 @@
     <script src="~/ViewApp/DnDobjects/Directives/CharacterSheetDirectives/RaceSelectorDirective.js"></script>
 </head>
 <body ng-app="DnDmodule" ng-controller="dndAppController">
-    <button ng-click="createResource()"></button>
-    <character-sheet-directive sheet="sheet"></character-sheet-directive>
+    <div class="navbar"></div>
+    <div class="left drawer"></div>
+    <div class="main-area">
+        <character-sheet-directive sheet="sheet"></character-sheet-directive>
+    </div>
+    <div class="right drawer"></div>
+    <div class="footer"></div>
 </body>
 </html>
