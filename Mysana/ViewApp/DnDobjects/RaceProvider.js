@@ -3,9 +3,6 @@
         function getRaces() {
             return [
                 new race({
-                    name: 'Unselected'
-                }),
-                new race({
                     name: 'Humans',
                     description: 'Gain +1 skill point per level and one additional feat'
                 }),
@@ -19,7 +16,33 @@
                     name: 'Gnome',
                     description: '',
                     strength: -2,
-                    constitution: 2
+                    constitution: 2,
+                    size: size.small
+                }),
+                new race({
+                    name: 'Goblin',
+                    description: '',
+                    strength: -2,
+                    dexterity: 2,
+                    charisma: -2,
+                    speed: 30,
+                    skillBonus: {
+                        moveSilently: 4,
+                        ride: 4
+                    },
+                    darkvision: true,
+                    automaticLanguages: {
+                        Common: true,
+                        Goblin: true
+                    },
+                    bonusLanguages: {
+                        Draconic: true,
+                        Elven: true,
+                        Giant: true,
+                        Gnoll: true,
+                        Orc: true
+                    },
+                    size: size.small
                 })
             ];
         }
@@ -35,7 +58,8 @@
                         charisma: input.charisma ? input.charisma : 0
                     },
                     name: input.name ? input.name : '',
-                    description: input.description ? input.description : ''
+                    description: input.description ? input.description : '',
+                    size: input.size ? input.size : size.medium
                 };
             } else {
                 return {
@@ -48,14 +72,22 @@
                         charisma: 0
                     },
                     name: '',
-                    description: ''
+                    description: '',
+                    size: size.medium
                 };
             }
         }
+        var size = {
+            large: 1,
+            medium: 2,
+            small: 3
+        }
         return {
             races: getRaces,
-            newRace: () => function () { new race() }
+            newRace: () => function () { new race() },
+            size: size
         };
+        var bob = new race();
     };
 };
 
